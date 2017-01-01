@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
+    version="2.4" id="WebApp_1482374371539">
+	<servlet>
+		<servlet-name>Servlet001</servlet-name>
+		<servlet-class>test001.Servlet001</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Servlet002</servlet-name>
+		<servlet-class>test001.Servlet002</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>BeerAdviceServlet003</servlet-name>
+		<servlet-class>test001.BeerAdviceServlet003</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DownloadServlet004</servlet-name>
+		<servlet-class>test001.DownloadJarServlet004</servlet-class>
+		<!--这里是servlet初始化的内容-->
+		<init-param>
+			<param-name>initparam</param-name>
+			<param-value>这个是初始化参数001</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ServletConfigServlet005</servlet-name>
+		<servlet-class>test001.ServletConfigServlet005</servlet-class>		
+		<!--这里是servlet初始化的内容-->
+		<init-param>
+			<param-name>servletInitparam1</param-name>
+			<param-value>这个是servlet初始化参数001</param-value>
+		</init-param>
+		<init-param>
+			<param-name>servletInitparam2</param-name>
+			<param-value>这个是servlet初始化参数002</param-value>
+		</init-param>
+				<init-param>
+			<param-name>servletInitparam3</param-name>
+			<param-value>这个是servlet初始化参数003</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DogListenerServlet006</servlet-name>
+		<servlet-class>test001.DogListenerServlet006</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UseJsp01Servlet007</servlet-name>
+		<servlet-class>test001.UseJsp01Servlet007</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UseJspElServlet008</servlet-name>
+		<servlet-class>test001.UseJspElServlet008</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UseJspJstlServlet009</servlet-name>
+		<servlet-class>test001.UseJspJstlServlet009</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Servlet001</servlet-name>
+		<url-pattern>/html/Servlet001</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Servlet002</servlet-name>
+		<url-pattern>/html/Servlet002</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BeerAdviceServlet003</servlet-name>
+		<url-pattern>/html/Servlet003</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DownloadServlet004</servlet-name>
+		<url-pattern>/html/Servlet004</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ServletConfigServlet005</servlet-name>
+		<url-pattern>/html/Servlet005</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DogListenerServlet006</servlet-name>
+		<url-pattern>/html/Servlet006</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UseJsp01Servlet007</servlet-name>
+		<url-pattern>/html/Servlet007</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UseJspElServlet008</servlet-name>
+		<url-pattern>/html/Servlet008</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UseJspJstlServlet009</servlet-name>
+		<url-pattern>/html/Servlet009</url-pattern>
+	</servlet-mapping>
+	
+	<!--配置上下文参数 -->
+	<!--上下文参数以及servlet初始化参数都是只在应用初始化的时候加载一次，不能热部署，改动后重启时才能加载-->
+	<context-param>
+		<param-name>contextParam1</param-name>
+		<param-value>上下文参数001</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextParam2</param-name>
+		<param-value>上下文参数002</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextParam3</param-name>
+		<param-value>上下文参数003</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>breed</param-name>
+		<param-value>这里是上下文参数配置的breed002</param-value>
+	</context-param>
+
+	<!--配置监听器类，监听器可以监听servletContext的初始化和撤销，可以在相应时间根据上下文内容做出相关操作-->	
+	<listener>
+		<listener-class>
+			test001Listener.DogContextListener
+		</listener-class>	
+	</listener>
+	
+  <welcome-file-list>
+      <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+
+<jsp-config>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+	<taglib-location>/WEB-INF/fmt.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
+	<taglib-location>/WEB-INF/fmt-rt.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+	<taglib-location>/WEB-INF/c.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
+	<taglib-location>/WEB-INF/c-rt.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+	<taglib-location>/WEB-INF/sql.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
+	<taglib-location>/WEB-INF/sql-rt.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+	<taglib-location>/WEB-INF/x.tld</taglib-location>
+	</taglib>
+	<taglib>
+	<taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
+	<taglib-location>/WEB-INF/x-rt.tld</taglib-location>
+	</taglib>
+	</jsp-config>
+	    
+</web-app>

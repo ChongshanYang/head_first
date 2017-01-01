@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>useJsp05.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    这个页面表单提交一个数组给servlet，servlet转发给jsp遍历展示<br>
+    <form  method="get" action="Servlet009">
+    	001:<input name="list" type="text"/><br>
+    	002:<input name="list" type="text"/><br>
+    	003:<input name="list" type="text"/><br>
+    	004:<input name="list" type="text"/><br>   <!-- input标签中的name属性屎一样的，这样servlet中使用getParameterValues可以获取所有数据成数组 -->
+    	<input type="submit"/>
+    </form>
+  </body>
+</html>

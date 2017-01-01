@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>servletConfigAndContext.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+         这个页面为配置并获取servlet初始化参数及上下文初始化参数示例<br><br>
+     <form method="get" action="Servlet005">
+     	<font>这里是通过getServletConfig().getInitParameter()方法获取的servlet初始化参数：</font><br>
+     	<input type="hidden"  name="type" value="1" >
+     	<input type="submit"></input>
+     </form><br>
+     <form method="get" action="Servlet005">
+     	<font>这里是通过getServletContext().getInitParameter()方法获取的上下文初始化参数：</font><br>
+     	<input type="hidden"  name="type" value="2" >
+     	<input type="submit"></input>
+     </form>
+     
+  </body>
+</html>

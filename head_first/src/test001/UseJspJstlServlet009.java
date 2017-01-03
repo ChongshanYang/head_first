@@ -15,8 +15,8 @@ public class UseJspJstlServlet009 extends HttpServlet{
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{
 		String[] al;
 		al = request.getParameterValues("list");
-		System.out.println(Arrays.toString(al));
-		request.setAttribute("list", Arrays.toString(al));    //传递和打印string[]数组的时候需要用这个转换一下
+		System.out.println(Arrays.toString(al));//打印string[]数组的时候需要用这个转换一下
+		request.setAttribute("list", al);    
 		RequestDispatcher view = request.getRequestDispatcher("../JSP/useJspJstl009.jsp");
 		view.forward(request, response);
 	}

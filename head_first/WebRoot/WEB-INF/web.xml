@@ -142,6 +142,17 @@
       <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
+<error-page>
+	<error-code>404</error-code>
+	<location>/notFoundException.jsp</location>	
+</error-page>
+
+<error-page>
+	<error-code>500</error-code>
+	<location>/notFoundException.jsp</location>	
+</error-page>
+
+
 
 <jsp-config>
 	<taglib>
@@ -176,6 +187,11 @@
 	<taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
 	<taglib-location>/WEB-INF/jstl/x-rt.tld</taglib-location>
 	</taglib>
-	</jsp-config>
+	
+	<taglib>
+	<taglib-uri>http://www.yanglc.com/jsp/jstl/mine</taglib-uri>
+	<taglib-location>/WEB-INF/jstl/mine.tld</taglib-location>
+	</taglib>
+</jsp-config>
 	    
 </web-app>

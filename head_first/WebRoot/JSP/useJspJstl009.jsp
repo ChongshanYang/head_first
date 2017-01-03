@@ -25,11 +25,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <%@include file="../html/public/head.jspf" %> <br>
-    这个页面使用定制标签库JSTL标签进行数组的遍历<br><br>
-    <table>
-     <c:forEach var="name" items="${list}" > 
+    这个table使用定制标签库JSTL标签进行数组的遍历<br><br>
+    <table border="1">
+     <c:forEach var="name" items="${list}" varStatus="loopCount">   <!-- 这里的varStatus是标签自带的属性，可以再API文档中查询 --> 
      	<tr>
-     		<td>${name}</td>
+     		<td>循环次数：${loopCount.count}</td><td>${name}</td>
      	</tr>
      </c:forEach>
     </table>	

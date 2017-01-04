@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-public class advisorTagHandler extends SimpleTagSupport{
+public class advisorTagHandler extends SimpleTagSupport{    //这里需要继承simpleTagSupport类并重写doTag()方法才能成为一个标签类
 	private String user;
 	
 	public void setUser(String user){

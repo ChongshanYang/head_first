@@ -37,5 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <li><a href="html/useJsp04.html">useJsp04（jsp页面使用forward标准动作进行转发）</a></li>
     <li><a href="html/useJsp05.html">useJsp05（jsp页面使用JSTL<\c:forEach\>标签遍历数组）</a></li>
     <li><a href="html/useJsp06.html">useJsp06（jsp页面使用自定义标签处理数据）</a></li>
+    <li><a href="html/useJsp07.html">useJsp07（jsp页面引用tag文件）</a></li>
   </body>
 </html>

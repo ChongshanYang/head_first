@@ -26,6 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         var snow = new Snow();
     </script>
     <h>Head First!</h>
+    <br><br>
+    <h>你好! ${param.username} !</h>
     <li><a href="html/form.html">firstHtml（第一个servlet）</a></li>
     <li><a href="html/beerAdvice.html">beerAdvice（使用jsp打印结果）</a></li>
     <li><a href="html/downloadJar.html">downloadJar（使用servlet下载文件以及初始化参数配置）</a></li>

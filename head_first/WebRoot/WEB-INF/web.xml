@@ -1,197 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd"
-    version="2.4" id="WebApp_1482374371539">
-	<servlet>
-		<servlet-name>Servlet001</servlet-name>
-		<servlet-class>test001.Servlet001</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>Servlet002</servlet-name>
-		<servlet-class>test001.Servlet002</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>BeerAdviceServlet003</servlet-name>
-		<servlet-class>test001.BeerAdviceServlet003</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>DownloadServlet004</servlet-name>
-		<servlet-class>test001.DownloadJarServlet004</servlet-class>
-		<!--这里是servlet初始化的内容-->
-		<init-param>
-			<param-name>initparam</param-name>
-			<param-value>这个是初始化参数001</param-value>
-		</init-param>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>ServletConfigServlet005</servlet-name>
-		<servlet-class>test001.ServletConfigServlet005</servlet-class>		
-		<!--这里是servlet初始化的内容-->
-		<init-param>
-			<param-name>servletInitparam1</param-name>
-			<param-value>这个是servlet初始化参数001</param-value>
-		</init-param>
-		<init-param>
-			<param-name>servletInitparam2</param-name>
-			<param-value>这个是servlet初始化参数002</param-value>
-		</init-param>
-				<init-param>
-			<param-name>servletInitparam3</param-name>
-			<param-value>这个是servlet初始化参数003</param-value>
-		</init-param>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>DogListenerServlet006</servlet-name>
-		<servlet-class>test001.DogListenerServlet006</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>UseJsp01Servlet007</servlet-name>
-		<servlet-class>test001.UseJsp01Servlet007</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>UseJspElServlet008</servlet-name>
-		<servlet-class>test001.UseJspElServlet008</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>UseJspJstlServlet009</servlet-name>
-		<servlet-class>test001.UseJspJstlServlet009</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>Servlet001</servlet-name>
-		<url-pattern>/html/Servlet001</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>Servlet002</servlet-name>
-		<url-pattern>/html/Servlet002</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>BeerAdviceServlet003</servlet-name>
-		<url-pattern>/html/Servlet003</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>DownloadServlet004</servlet-name>
-		<url-pattern>/html/Servlet004</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>ServletConfigServlet005</servlet-name>
-		<url-pattern>/html/Servlet005</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>DogListenerServlet006</servlet-name>
-		<url-pattern>/html/Servlet006</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>UseJsp01Servlet007</servlet-name>
-		<url-pattern>/html/Servlet007</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>UseJspElServlet008</servlet-name>
-		<url-pattern>/html/Servlet008</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>UseJspJstlServlet009</servlet-name>
-		<url-pattern>/html/Servlet009</url-pattern>
-	</servlet-mapping>
-	
-	<!--配置上下文参数 -->
-	<!--上下文参数以及servlet初始化参数都是只在应用初始化的时候加载一次，不能热部署，改动后重启时才能加载-->
-	<context-param>
-		<param-name>contextParam1</param-name>
-		<param-value>上下文参数001</param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextParam2</param-name>
-		<param-value>上下文参数002</param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextParam3</param-name>
-		<param-value>上下文参数003</param-value>
-	</context-param>
-	
-	<context-param>
-		<param-name>breed</param-name>
-		<param-value>这里是上下文参数配置的breed002</param-value>
-	</context-param>
-
-	<!--配置监听器类，监听器可以监听servletContext的初始化和撤销，可以在相应时间根据上下文内容做出相关操作-->	
-	<listener>
-		<listener-class>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_1482374371539" version="2.4">
+  <servlet>
+    <servlet-name>Servlet001</servlet-name>
+    <servlet-class>test001.Servlet001</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Servlet002</servlet-name>
+    <servlet-class>test001.Servlet002</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BeerAdviceServlet003</servlet-name>
+    <servlet-class>test001.BeerAdviceServlet003</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownloadServlet004</servlet-name>
+    <servlet-class>test001.DownloadJarServlet004</servlet-class>
+    <init-param>
+      <param-name>initparam</param-name>
+      <param-value>这个是初始化参数001</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletConfigServlet005</servlet-name>
+    <servlet-class>test001.ServletConfigServlet005</servlet-class>
+    <init-param>
+      <param-name>servletInitparam1</param-name>
+      <param-value>这个是servlet初始化参数001</param-value>
+    </init-param>
+    <init-param>
+      <param-name>servletInitparam2</param-name>
+      <param-value>这个是servlet初始化参数002</param-value>
+    </init-param>
+    <init-param>
+      <param-name>servletInitparam3</param-name>
+      <param-value>这个是servlet初始化参数003</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>DogListenerServlet006</servlet-name>
+    <servlet-class>test001.DogListenerServlet006</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UseJsp01Servlet007</servlet-name>
+    <servlet-class>test001.UseJsp01Servlet007</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UseJspElServlet008</servlet-name>
+    <servlet-class>test001.UseJspElServlet008</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UseJspJstlServlet009</servlet-name>
+    <servlet-class>test001.UseJspJstlServlet009</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet001</servlet-name>
+    <url-pattern>/html/Servlet001</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet002</servlet-name>
+    <url-pattern>/html/Servlet002</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BeerAdviceServlet003</servlet-name>
+    <url-pattern>/html/Servlet003</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet004</servlet-name>
+    <url-pattern>/html/Servlet004</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletConfigServlet005</servlet-name>
+    <url-pattern>/html/Servlet005</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DogListenerServlet006</servlet-name>
+    <url-pattern>/html/Servlet006</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UseJsp01Servlet007</servlet-name>
+    <url-pattern>/html/Servlet007</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UseJspElServlet008</servlet-name>
+    <url-pattern>/html/Servlet008</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UseJspJstlServlet009</servlet-name>
+    <url-pattern>/html/Servlet009</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>contextParam1</param-name>
+    <param-value>上下文参数001</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextParam2</param-name>
+    <param-value>上下文参数002</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextParam3</param-name>
+    <param-value>上下文参数003</param-value>
+  </context-param>
+  <context-param>
+    <param-name>breed</param-name>
+    <param-value>这里是上下文参数配置的breed002</param-value>
+  </context-param>
+  <listener>
+    <listener-class>
 			test001Listener.DogContextListener
-		</listener-class>	
-	</listener>
-	
+		</listener-class>
+  </listener>
   <welcome-file-list>
-      <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-
-<error-page>
-	<error-code>404</error-code>
-	<location>/notFoundException.jsp</location>	
-</error-page>
-
-<error-page>
-	<error-code>500</error-code>
-	<location>/notFoundException.jsp</location>	
-</error-page>
-
-
-
-<jsp-config>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/fmt.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/fmt-rt.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/c.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/c-rt.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/sql.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/sql-rt.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/x.tld</taglib-location>
-	</taglib>
-	<taglib>
-	<taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/x-rt.tld</taglib-location>
-	</taglib>
-	
-	<taglib>
-	<taglib-uri>http://www.yanglc.com/jsp/jstl/mine</taglib-uri>
-	<taglib-location>/WEB-INF/jstl/mine.tld</taglib-location>
-	</taglib>
-</jsp-config>
-	    
+  <error-page>
+    <error-code>404</error-code>
+    <location>/notFoundException.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/notFoundException.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/requestDenied.jsp</location>
+  </error-page>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/fmt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/fmt-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/c.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/c-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/sql.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/sql-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/x.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/x-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://www.yanglc.com/jsp/jstl/mine</taglib-uri>
+      <taglib-location>/WEB-INF/jstl/mine.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  <security-role>
+    <role-name>tomcat</role-name>
+  </security-role>
+  <security-role>
+    <role-name>guest</role-name>
+  </security-role>
+  <security-role>
+    <role-name>root</role-name>
+  </security-role>
+ <!--Security is active on entire directory -->  
+  <security-constraint>  
+    <display-name>Tomcat Server FormSecurity Constraint</display-name>  
+    
+    <web-resource-collection>  
+     	<web-resource-name>ProtectedArea</web-resource-name>  
+      <description>A Page of LoginSuccess</description>  
+      <url-pattern>/html/*</url-pattern>  
+      <url-pattern>/JSP/*</url-pattern>
+      <url-pattern>/index.jsp</url-pattern>
+    </web-resource-collection>  
+    
+    <auth-constraint>  
+      <!-- Anyone with one of the listedroles may access this area -->  
+      <role-name>root</role-name>  
+    </auth-constraint>
+      
+ </security-constraint>  
+ 
+ 
+  <!-- Login configuration uses form-basedauthentication -->  
+  <login-config>  
+    <auth-method>FORM</auth-method>  
+    <realm-name>Tomcat ServerConfiguration Form-Based Authentication Area</realm-name>  
+    <form-login-config>  
+             <form-login-page>/loginPage.html</form-login-page>  
+             <form-error-page>/loginError.html</form-error-page>     
+    </form-login-config>  
+  </login-config>  
+ 
+ 
 </web-app>

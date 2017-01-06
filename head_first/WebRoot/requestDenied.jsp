@@ -25,6 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     	你没得相应权限！<br>
     	<img src="/head_first/images/errorpic.jpg"><br>
-    	<li><a href="loginPage.html">返回登录界面</a></li>
+    	<li><a href="login.jsp">返回登录界面</a></li>
   </body>
 </html>

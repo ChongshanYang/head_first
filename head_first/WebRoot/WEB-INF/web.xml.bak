@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_1482374371539" version="2.4">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd" id="WebApp_1482374371539" version="2.4">
   <servlet>
     <servlet-name>Servlet001</servlet-name>
     <servlet-class>test001.Servlet001</servlet-class>
@@ -52,6 +52,13 @@
     <servlet-name>UseJspJstlServlet009</servlet-name>
     <servlet-class>test001.UseJspJstlServlet009</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>test001.LoginServlet</servlet-class>
+  </servlet>
+  
+  
+  
   <servlet-mapping>
     <servlet-name>Servlet001</servlet-name>
     <url-pattern>/html/Servlet001</url-pattern>
@@ -88,6 +95,13 @@
     <servlet-name>UseJspJstlServlet009</servlet-name>
     <url-pattern>/html/Servlet009</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Servlet010</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <context-param>
     <param-name>contextParam1</param-name>
     <param-value>上下文参数001</param-value>
@@ -162,44 +176,29 @@
       <taglib-location>/WEB-INF/jstl/mine.tld</taglib-location>
     </taglib>
   </jsp-config>
-  <security-role>
-    <role-name>tomcat</role-name>
-  </security-role>
-  <security-role>
-    <role-name>guest</role-name>
-  </security-role>
-  <security-role>
-    <role-name>root</role-name>
-  </security-role>
- <!--Security is active on entire directory -->  
-  <security-constraint>  
-    <display-name>Tomcat Server FormSecurity Constraint</display-name>  
-    
-    <web-resource-collection>  
-     	<web-resource-name>ProtectedArea</web-resource-name>  
-      <description>A Page of LoginSuccess</description>  
-      <url-pattern>/html/*</url-pattern>  
-      <url-pattern>/JSP/*</url-pattern>
-      <url-pattern>/html/*</url-pattern>
-    </web-resource-collection>  
-    
-    <auth-constraint>  
-      <!-- Anyone with one of the listedroles may access this area -->  
-      <role-name>root</role-name>  
-    </auth-constraint>
-      
- </security-constraint>  
- 
- 
-  <!-- Login configuration uses form-basedauthentication -->  
-  <login-config>  
-    <auth-method>FORM</auth-method>  
-    <realm-name>Tomcat ServerConfiguration Form-Based Authentication Area</realm-name>  
-    <form-login-config>  
-             <form-login-page>/loginPage.html</form-login-page>  
-             <form-error-page>/loginError.html</form-error-page>     
-    </form-login-config>  
-  </login-config>  
- 
- 
+  <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>test001Filter.LoginFilter</filter-class>
+    <init-param>
+      <param-name>ignore</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>permitUrls</param-name>
+      <param-value>/login.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>gotoUrl</param-name>
+      <param-value>/login.jsp</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/html/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/index.jsp, /html/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>

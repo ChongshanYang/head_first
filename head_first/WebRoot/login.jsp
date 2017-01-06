@@ -23,9 +23,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-       请登录，现在有三个用户：tomcat、root、yanglc<br><br>
-  j_security_check、 j_username、j_password都是固定的元素，保证表单与容器进行通信<br><br>
-    <form method="get" action="index.jsp">
+       请登录，用户名随便填，密码默认都是123<br><br>
+	用户名和密码在loginServlet中进行验证，而过滤器filter检查用户名是否为空，若不为空则返回登录页面要求登录<br><br>
+    <form method="get" action="Servlet010">
     	userName:<input type="text" name="username"><br>
     	passWord:<input type="text" name="password"><br>
     	<input type="submit" >

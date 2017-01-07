@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.mail.iap.Response;
 
 public class Servlet001 extends HttpServlet{
 	@Override

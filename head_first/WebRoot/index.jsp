@@ -23,7 +23,7 @@
     </script>
     <h>Head First!</h>
     <br><br>
-    <h>你好! ${param.username} ! 而而</h>
+    <h>你好! ${param.username} ! </h>
     <li><a href="html/form.html">firstHtml（第一个servlet）</a></li>
     <li><a href="html/beerAdvice.html">beerAdvice（使用jsp打印结果）</a></li>
     <li><a href="html/downloadJar.html">downloadJar（使用servlet下载文件以及初始化参数配置）</a></li>
@@ -36,5 +36,10 @@
     <li><a href="html/useJsp05.html">useJsp05（jsp页面使用JSTL<\c:forEach\>标签遍历数组）</a></li>
     <li><a href="html/useJsp06.html">useJsp06（jsp页面使用自定义标签处理数据）</a></li>
     <li><a href="html/useJsp07.html">useJsp07（jsp页面引用tag文件）</a></li>
+    <li><a href="html/sessionServlet.html">sessionServlet（使用session保存会话信息）</a></li>
+    <li><a href="html/bookStore.html">bookStore（使用session保存会话信息，实现购物车存储信息）</a></li>
+    <form method="get" action="Servlet012">
+        <button type="submit" >登出</button>
+    </form>
   </body>
 </html>

@@ -29,14 +29,14 @@
 			   <label for="firstname" class="col-sm-2 control-label">用户名</label>
 			   <div class="col-sm-10">
 				   <input type="text" class="form-control" id="firstname" name="username"
-						  placeholder="请输入名字">
+						  placeholder="请输入用户名">
 			   </div>
 		   </div>
 		   <div class="form-group">
 			   <label for="lastname" class="col-sm-2 control-label">密码</label>
 			   <div class="col-sm-10">
 				   <input type="text" class="form-control" id="lastname" name="password"
-						  placeholder="请输入姓">
+						  placeholder="请输入密码">
 			   </div>
 		   </div>
 		   <div class="form-group">

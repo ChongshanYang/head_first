@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd" id="WebApp_1482374371539" version="2.4">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee"  xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd" id="WebApp_1482374371539" version="2.4">
   <servlet>
     <servlet-name>Servlet001</servlet-name>
     <servlet-class>test001.Servlet001</servlet-class>
@@ -56,8 +56,18 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>test001.LoginServlet</servlet-class>
   </servlet>
-  
-  
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>test001.SessionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginoutServlet</servlet-name>
+    <servlet-class>test001.LoginoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>test001.CartServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>Servlet001</servlet-name>
@@ -96,8 +106,20 @@
     <url-pattern>/html/Servlet009</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/Servlet010</url-pattern>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/Servlet010</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/html/Servlet011</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginoutServlet</servlet-name>
+    <url-pattern>/Servlet012</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/html/Servlet013</url-pattern>
   </servlet-mapping>
   
   
@@ -118,64 +140,61 @@
     <param-name>breed</param-name>
     <param-value>这里是上下文参数配置的breed002</param-value>
   </context-param>
+
+
   <listener>
     <listener-class>
 			test001Listener.DogContextListener
 		</listener-class>
   </listener>
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
   <error-page>
     <error-code>404</error-code>
     <location>/notFoundException.jsp</location>
   </error-page>
+
   <error-page>
     <error-code>500</error-code>
     <location>/notFoundException.jsp</location>
   </error-page>
+
   <error-page>
     <error-code>403</error-code>
     <location>/requestDenied.jsp</location>
   </error-page>
+
   <jsp-config>
     <taglib>
       <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
       <taglib-location>/WEB-INF/jstl/fmt.tld</taglib-location>
     </taglib>
-    <taglib>
-      <taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
-      <taglib-location>/WEB-INF/jstl/fmt-rt.tld</taglib-location>
-    </taglib>
+
     <taglib>
       <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
       <taglib-location>/WEB-INF/jstl/c.tld</taglib-location>
     </taglib>
-    <taglib>
-      <taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
-      <taglib-location>/WEB-INF/jstl/c-rt.tld</taglib-location>
-    </taglib>
+
     <taglib>
       <taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
       <taglib-location>/WEB-INF/jstl/sql.tld</taglib-location>
     </taglib>
-    <taglib>
-      <taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
-      <taglib-location>/WEB-INF/jstl/sql-rt.tld</taglib-location>
-    </taglib>
+
     <taglib>
       <taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
       <taglib-location>/WEB-INF/jstl/x.tld</taglib-location>
     </taglib>
-    <taglib>
-      <taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
-      <taglib-location>/WEB-INF/jstl/x-rt.tld</taglib-location>
-    </taglib>
+
     <taglib>
       <taglib-uri>http://www.yanglc.com/jsp/jstl/mine</taglib-uri>
       <taglib-location>/WEB-INF/jstl/mine.tld</taglib-location>
     </taglib>
   </jsp-config>
+
+
   <filter>
     <filter-name>loginFilter</filter-name>
     <filter-class>test001Filter.LoginFilter</filter-class>
@@ -200,5 +219,9 @@
     <filter-name>loginFilter</filter-name>
     <url-pattern>/index.jsp</url-pattern>
   </filter-mapping>
-  
+
+  <!-- 设置Session的有效时间:以分钟为单位-->
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
 </web-app>

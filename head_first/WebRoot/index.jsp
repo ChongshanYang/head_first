@@ -38,6 +38,9 @@
     <li><a href="html/useJsp07.html">useJsp07（jsp页面引用tag文件）</a></li>
     <li><a href="html/sessionServlet.html">sessionServlet（使用session保存会话信息）</a></li>
     <li><a href="html/bookStore.html">bookStore（使用session保存会话信息，实现购物车存储信息）</a></li>
+    <li><a href="Servlet017">bookStore（浏览器禁用cookie时，使用URL重写实现购物车存储信息）</a></li>
+    <li><a href="JSP/submitTest.jsp">submitTest（使用js做页面控制，防止重复提交信息）</a></li>
+    <li><a href="Servlet015">Servlet015（使用session保存token令牌，防止重复提交信息）</a></li>
     <form method="get" action="Servlet012">
         <button type="submit" >登出</button>
     </form>

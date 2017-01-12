@@ -68,7 +68,33 @@
     <servlet-name>CartServlet</servlet-name>
     <servlet-class>test001.CartServlet</servlet-class>
   </servlet>
-  
+  <servlet>
+    <servlet-name>SubmitServlet</servlet-name>
+    <servlet-class>test001.SubmitTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SessionTokenServlet</servlet-name>
+  <servlet-class>test001.SessionTokenServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SessionTokenServlet02</servlet-name>
+    <servlet-class>test001.SessionTokenServlet02</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BookStoreServlet</servlet-name>
+    <servlet-class>test001.BookStoreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BuyBookServlet</servlet-name>
+    <servlet-class>test001.BuyBookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BookCartServlet</servlet-name>
+    <servlet-class>test001.BookCartServlet</servlet-class>
+  </servlet>
+
+
+
   <servlet-mapping>
     <servlet-name>Servlet001</servlet-name>
     <url-pattern>/html/Servlet001</url-pattern>
@@ -120,6 +146,30 @@
   <servlet-mapping>
     <servlet-name>CartServlet</servlet-name>
     <url-pattern>/html/Servlet013</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SubmitServlet</servlet-name>
+    <url-pattern>/JSP/Servlet014</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionTokenServlet</servlet-name>
+    <url-pattern>/Servlet015</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionTokenServlet02</servlet-name>
+    <url-pattern>/Servlet016</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookStoreServlet</servlet-name>
+    <url-pattern>/Servlet017</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BuyBookServlet</servlet-name>
+    <url-pattern>/Servlet018</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookCartServlet</servlet-name>
+    <url-pattern>/Servlet019</url-pattern>
   </servlet-mapping>
   
   

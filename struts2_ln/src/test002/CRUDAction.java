@@ -8,15 +8,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CRUDAction extends ActionSupport{
     public String add(){
         System.out.println("add!");
-        return SUCCESS;
+        return "SUCCESS";
     }
     public String delete(){
-        return SUCCESS;
+        return "SUCCESS";
     }
     public String update(){
-        return SUCCESS;
+        return "SUCCESS";
     }
     public String query(){
-        return SUCCESS;
+        return "SUCCESS";
     }
 }

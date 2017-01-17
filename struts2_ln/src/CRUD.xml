@@ -5,18 +5,18 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="crud" extends="struts-default" namespace="/html">
+    <package name="crud" extends="struts-default" namespace="/aa">
         <action name="add" method="add" class="test002.CRUDAction">
-            <result name="SUCCESS">../JSP/add.jsp</result>
+            <result name="SUCCESS">/JSP/add.jsp</result>
         </action>
         <action name="delete" method="delete" class="test002.CRUDAction">
-            <result name="SUCCESS">../JSP/delete.jsp</result>
+            <result name="SUCCESS">/JSP/delete.jsp</result>
         </action>
         <action name="update" method="update" class="test002.CRUDAction">
-            <result name="SUCCESS">../JSP/update.jsp</result>
+            <result name="SUCCESS">/JSP/update.jsp</result>
         </action>
         <action name="query" method="query" class="test002.CRUDAction">
-            <result name="SUCCESS">../JSP/query.jsp</result>
+            <result name="SUCCESS">/JSP/query.jsp</result>
         </action>
     </package>
 </struts>

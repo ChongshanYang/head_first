@@ -5,10 +5,17 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <include file="CRUD.xml"></include>
     <package name="test002" namespace="/" extends="struts-default">
+<!--配置拦截器-->
+        <interceptors>
+            <interceptor name="timer" class="com.opensymphony.xwork2.interceptor.TimerInterceptor"></interceptor>
+            <interceptor name="params" class="com.opensymphony.xwork2.interceptor.ParametersInterceptor"></interceptor>
+        </interceptors>
         <action name="Action001" class="test002.LoginAction001">
             <result name="SUCCESS">/index.jsp</result>
             <result name="FAILURE">/failure.jsp</result>
         </action>
     </package>
+
 </struts>

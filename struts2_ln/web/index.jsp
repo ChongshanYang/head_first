@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>主页</title>
   </head>
   <body>
-  $END$
+  <li><a href="login.jsp">使用action进行登录验证</a></li>
+  <li><a href="html/CRUD.html">通过在struts配置文件中配置method属性，调用一个action中的不同方法</a></li>
   </body>
 </html>

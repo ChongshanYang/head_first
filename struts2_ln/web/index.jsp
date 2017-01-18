@@ -13,5 +13,6 @@
   <body>
   <li><a href="login.jsp">使用action进行登录验证</a></li>
   <li><a href="html/CRUD.html">通过在struts配置文件中配置method属性，调用一个action中的不同方法</a></li>
+  <li><a href="html/exception.html">配置result及exception属性，处理action抛出的异常</a></li>
   </body>
 </html>

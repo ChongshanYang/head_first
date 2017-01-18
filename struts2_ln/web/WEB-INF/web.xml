@@ -27,7 +27,7 @@
         <filter-name>loginFilter</filter-name>
         <url-pattern>/index.jsp</url-pattern>
     </filter-mapping>-->    <!--登录验证过滤-->
-    <welcome-file-list >
+    <welcome-file-list>
         /index.jsp
     </welcome-file-list>
 </web-app>

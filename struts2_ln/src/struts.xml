@@ -6,6 +6,7 @@
 
 <struts>
     <include file="CRUD.xml"></include>
+    <include file="exception.xml"></include>
     <package name="test002" namespace="/" extends="struts-default">
 <!--配置拦截器-->
         <interceptors>

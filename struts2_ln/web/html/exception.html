@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exception</title>
+</head>
+<body>
+这个页面展示配置了exception参数时的效果，当输入name值为“exception”时，action抛出一个异常，result接受到这个异常，转到相关jsp <br>
+当输入name值为“global”时，action抛出一个全局异常，全局result接收到这个异常，转到相关jsp<br>
+相关的配置见exception.xlm、ExceptionAction类<br>
+<form method="get" action="Action003.action">
+    name:<input type="text" name="name"/><br>
+    password:<input type="password" name="password"/><br>
+    <input type="submit"/>
+</form>
+</body>
+</html>

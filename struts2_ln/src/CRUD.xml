@@ -13,7 +13,7 @@
             <result name="SUCCESS">/JSP/delete.jsp</result>
         </action>
         <action name="update" method="update" class="test002.CRUDAction">
-            <result name="SUCCESS">/JSP/update.jsp</result>
+            <result name="SUCCESS" >/JSP/update.jsp</result>
         </action>
         <action name="query" method="query" class="test002.CRUDAction">
             <result name="SUCCESS">/JSP/query.jsp</result>

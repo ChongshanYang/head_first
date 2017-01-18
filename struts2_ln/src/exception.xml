@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--这里布局了一个全局异常及result，当action抛出java.lang.Exception异常的时候，就会转到名为"myGlobal"的result中-->
+    <package name="exc" extends="struts-default" abstract="true">
+        <global-results>
+            <result name="myGlobal">/JSP/myGlobal.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping result="myGlobal" exception="java.lang.Exception">
+            </exception-mapping>
+        </global-exception-mappings>
+    </package>
+
+    <package name="ex" extends="exc">
+        <!--这里继承了定义了全局异常及result的包，所以此action可以使用全局异常的定义-->
+        <action name="Action003" class="test002.ExceptionAction">
+            <!--定义了相关异常对应的result-->
+            <exception-mapping result="myException" exception="java.lang.ClassNotFoundException"></exception-mapping>
+            <result name="myException">/JSP/myException.jsp</result>
+            <!--注意，这里type为redirect，否则使用服务器内跳转时index页面再访问其他页面链接时url会出错-->
+            <result name="success" type="redirect">/index.jsp</result>
+        </action>
+    </package>
+
+</struts>

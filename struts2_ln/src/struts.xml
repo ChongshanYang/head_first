@@ -17,6 +17,20 @@
             <result name="SUCCESS">/index.jsp</result>
             <result name="FAILURE">/failure.jsp</result>
         </action>
+
+        <action name="Action003" class="test002.ScopeAction">
+            <result name="success">/JSP/scope01.jsp</result>
+        </action>
+        <action name="Action004" class="test002.ScopeAction02">
+            <result name="success">/JSP/scope01.jsp</result>
+        </action>
+        <action name="Action005" class="test002.ScopeAction03">
+            <result name="success">/JSP/scope01.jsp</result>
+        </action>
+        <action name="Action006" class="test002.ScopeAction04">
+            <result name="success">/JSP/scope01.jsp</result>
+        </action>
+
     </package>
 
 </struts>

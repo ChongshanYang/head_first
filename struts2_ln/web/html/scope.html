@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title>
+</head>
+<body>
+本页面展示在action中获取scope对象<br><br>
+<form method="get" action="Action003.action">
+    这个表单是使用与servlet解耦和的非IOC方式来获取scope对象<br>
+    request:<input type="text" name="req"/><br>
+    session:<input type="text" name="sess"/><br>
+    appliaction:<input type="text" name="app"/><br>
+    <input type="submit"/>
+</form>
+<form method="get" action="Action004.action">
+    这个表单是使用与servlet解耦和的IOC方式来获取scope对象(主要使用)<br>
+    request:<input type="text" name="req"/><br>
+    session:<input type="text" name="sess"/><br>
+    appliaction:<input type="text" name="app"/><br>
+    <input type="submit"/>
+</form>
+<form method="get" action="Action005.action">
+    这个表单是使用与servlet耦和的非IOC方式来获取scope对象<br>
+    request:<input type="text" name="req"/><br>
+    session:<input type="text" name="sess"/><br>
+    appliaction:<input type="text" name="app"/><br>
+    <input type="submit"/>
+</form>
+<form method="get" action="Action006.action">
+    这个表单是使用与servlet耦和的IOC方式来获取scope对象<br>
+    request:<input type="text" name="req"/><br>
+    session:<input type="text" name="sess"/><br>
+    appliaction:<input type="text" name="app"/><br>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

@@ -7,6 +7,7 @@
 <struts>
     <include file="CRUD.xml"></include>
     <include file="exception.xml"></include>
+    <include file="annotation.xml"></include>
     <package name="test002" namespace="/" extends="struts-default">
 <!--配置拦截器-->
         <interceptors>
@@ -59,6 +60,7 @@
             </interceptor-ref>
             <interceptor-ref name="defaultStack"></interceptor-ref>   <!--这里必须手动引用struts默认的拦截器栈，否则会出错-->
         </action>
+
     </package>
 
 </struts>

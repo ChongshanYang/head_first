@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="anno" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="anno" class="com.opensymphony.xwork2.interceptor.annotations.AnnotationWorkflowInterceptor"></interceptor>
+            <!--使用这个struts2自带的拦截器，可以通过注解对方法进行监控-->
+            <interceptor-stack name="defult">
+                <interceptor-ref name="anno"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref><!--这里一定要记得加上默认拦截器栈上去-->
+            </interceptor-stack>
+        </interceptors>
+        <action name="annoAction" class="test002.AnnotationInterceptorAction" >
+            <interceptor-ref name="defult"></interceptor-ref>
+            <result name="login">/JSP/logSuc.jsp</result>
+            <result name="success">/JSP/annoSuc.jsp</result>
+        </action>
+    </package> 
+</struts>

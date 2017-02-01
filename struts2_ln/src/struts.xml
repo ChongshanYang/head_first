@@ -12,8 +12,24 @@
         <interceptors>
             <interceptor name="timer" class="com.opensymphony.xwork2.interceptor.TimerInterceptor"></interceptor>
             <interceptor name="params" class="com.opensymphony.xwork2.interceptor.ParametersInterceptor"></interceptor>
+            <interceptor name="login001" class="test002Iterceptor.Iterceptor001"></interceptor>
+            <interceptor name="login002" class="test002Iterceptor.AbsIterceptor002"></interceptor>
+            <interceptor name="login003" class="test002Iterceptor.MethodFilterInterceptor003"></interceptor>
+            <interceptor name="interceptor04" class="test002Iterceptor.MethodFilterInterceptor003"></interceptor>
+            <interceptor-stack name="login">
+                <interceptor-ref name="login001" ></interceptor-ref>
+                <interceptor-ref name="login002" ></interceptor-ref>
+                <interceptor-ref name="login003" ></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <!--这个是struts2默认的拦截器栈，当自定义拦截器时，这个默认的拦截器就会失效，必须手动添加配置，否则就会有问题-->
+            </interceptor-stack>
         </interceptors>
         <action name="Action001" class="test002.LoginAction001">
+            <interceptor-ref name="token"></interceptor-ref>   <!--token拦截器，用于防止重复提交表单-->
+            <interceptor-ref name="login"></interceptor-ref>
+            <!--上面配置的拦截器栈手动包含struts默认的拦截器栈，否则会出错-->
+            <!--拦截器的拦截顺序和这里的配置顺序有关，这方面和filter的配置是一样的-->
+            <result name="invalid.token">/subError.jsp</result>   <!--重复提交时的跳转页面-->
             <result name="SUCCESS">/index.jsp</result>
             <result name="FAILURE">/failure.jsp</result>
         </action>
@@ -30,7 +46,19 @@
         <action name="Action006" class="test002.ScopeAction04">
             <result name="success">/JSP/scope01.jsp</result>
         </action>
-
+        <action name="Action007" class="test002.LoginAction001">
+            <result name="SUCCESS">/JSP/OGNL001.jsp</result>
+            <result name="FAILURE">/failure.jsp</result>
+        </action>
+        <action name="*_*" class="test002.InterceptedAction" method="{2}">
+            <result name="SUCCESS">/JSP/{2}Suc.jsp</result>
+            <interceptor-ref name="interceptor04">
+                <!--以下参数用于配置拦截器具体拦截什么方法，忽略什么方法（当忽略与拦截冲突时以拦截（includeMethods标签）为准，另外此参数亦可在注册拦截器时进行配置）-->
+                <param name="excludeMethods">m2,m3</param>
+                <param name="includeMethods">m1</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>   <!--这里必须手动引用struts默认的拦截器栈，否则会出错-->
+        </action>
     </package>
 
 </struts>

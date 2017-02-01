@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
 
@@ -52,6 +53,7 @@
 				   <button type="submit" class="btn btn-default">登录</button>
 			   </div>
 		   </div>
+			   <s:token></s:token><!--这里需使用token标签，这样页面就会自动生成一个token令牌，防止重复提交-->
 	   </form>
   </body>
 </html>

@@ -27,6 +27,9 @@ public class LoginAction001 implements Action ,ModelDriven<User> ,RequestAware,S
     public String execute() throws Exception {
         if(user.getPassword().equals("123")){
             session.put("user", user);     //只有在这里把用户信息保存到session对象中，之后的访问才能通过过滤器的验证
+//            String token = (String) session.get("struts.token");     //这里也要把struts2<token>标签生成的token值保存到会话中，否则页面一刷新就报错了
+//            System.out.println(token);
+//            session.put("token", token);
             return "SUCCESS";
         }else{
             return "FAILURE";

@@ -20,6 +20,6 @@
   <li><a href="html/OGNL001.html">JSP使用OGNL获取属性值</a></li>
   <li><a href="JSP/interceptorLink.jsp">拦截器灵活访问action中的方法</a></li>
   <li><a href="annoAction.action">使用struts2自带的注解拦截器监控注解方法（具体效果看后台）</a></li>
-
+  <s:token></s:token><!--这里需使用token标签，这样页面就会自动生成一个token令牌，防止重复提交-->
   </body>
 </html>

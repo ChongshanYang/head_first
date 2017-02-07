@@ -20,6 +20,9 @@
   <li><a href="html/OGNL001.html">JSP使用OGNL获取属性值</a></li>
   <li><a href="JSP/interceptorLink.jsp">拦截器灵活访问action中的方法</a></li>
   <li><a href="annoAction.action">使用struts2自带的注解拦截器监控注解方法（具体效果看后台）</a></li>
+  <li><a href="JSP/typeExchange.jsp">使用struts2自带的类型转换器对jsp数据类型进行转换（具体效果看后台）</a></li>
+  <li><a href="JSP/typeExchange02.jsp">使用struts2自带的类型转换器对jsp数据类型进行转换（list和map类型的传递）</a></li>
+  <li><a href="JSP/typeExchange03.jsp">使用自定义的类型转换器对jsp数据类型进行转换（String和Person类型相互转换）</a></li>
   <s:token></s:token><!--这里需使用token标签，这样页面就会自动生成一个token令牌，防止重复提交-->
   </body>
 </html>

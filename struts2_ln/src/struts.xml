@@ -60,6 +60,16 @@
             </interceptor-ref>
             <interceptor-ref name="defaultStack"></interceptor-ref>   <!--这里必须手动引用struts默认的拦截器栈，否则会出错-->
         </action>
+        <action name="Action008" class="test002.TypeExchangeAction">
+            <result name="success">/JSP/typeEResult.jsp</result>
+        </action>
+        <action name="Action009" class="test002.TypeExchangeAction02">
+            <result name="success">/JSP/typeEResult2.jsp</result>
+        </action>
+        <action name="Action010" class="test002.TypeExchangeAction03">
+            <result name="success">/JSP/typeEResult3.jsp</result>
+        </action>
+
 
     </package>
 

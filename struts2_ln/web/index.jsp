@@ -23,6 +23,8 @@
   <li><a href="JSP/typeExchange.jsp">使用struts2自带的类型转换器对jsp数据类型进行转换（具体效果看后台）</a></li>
   <li><a href="JSP/typeExchange02.jsp">使用struts2自带的类型转换器对jsp数据类型进行转换（list和map类型的传递）</a></li>
   <li><a href="JSP/typeExchange03.jsp">使用自定义的类型转换器对jsp数据类型进行转换（String和Person类型相互转换）</a></li>
+  <li><a href="JSP/validation01.jsp">为action配置校验文件，进行表单参数校验</a></li>
+  <li><a href="JSP/validation02.jsp">在action中重写validate()方法，自定义校验器进行表单参数校验</a></li>
   <s:token></s:token><!--这里需使用token标签，这样页面就会自动生成一个token令牌，防止重复提交-->
   </body>
 </html>

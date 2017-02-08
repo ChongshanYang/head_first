@@ -69,7 +69,14 @@
         <action name="Action010" class="test002.TypeExchangeAction03">
             <result name="success">/JSP/typeEResult3.jsp</result>
         </action>
-
+        <action name="Action011" class="test002.Validation01Action">
+            <result name="success">/JSP/validationResult.jsp</result>
+            <result name="input">/JSP/validationError.jsp</result>
+        </action>
+        <action name="Action012" class="test002.Validation02Action">
+            <result name="success">/JSP/validationResult02.jsp</result>
+            <result name="input">/JSP/validationError.jsp</result>
+        </action>
 
     </package>
 

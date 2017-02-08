@@ -1,0 +1,38 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<!--字段类型的校验配置-->
+<validators>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>姓名不能为空</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="trimExpression"><![CDATA[(\w{4,10})]]></param>
+            <message>姓名要在4-10位之间</message>
+        </field-validator>
+    </field>
+    <field name="age">
+        <field-validator type="required">
+            <message>年龄不能为空</message>
+        </field-validator>
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">100</param>
+            <message>年龄限制1到100</message>
+        </field-validator>
+    </field>
+    <field name="date">
+        <field-validator type="required">
+            <message>日期不能为空</message>
+        </field-validator>
+        <field-validator type="date">
+            <param name="min">2017-01-01</param>
+            <param name="max">2017-12-31</param>
+            <message>日期在2017-01-01到2017-12-31之间</message>
+        </field-validator>
+    </field>
+
+</validators>

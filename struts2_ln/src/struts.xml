@@ -5,6 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.multipart.maxSize" value="10485760"/>  <!--这个常量设置的是上传文件最大为10M（单位是B），上传相关action为action13-->
     <include file="CRUD.xml"></include>
     <include file="exception.xml"></include>
     <include file="annotation.xml"></include>
@@ -76,6 +77,27 @@
         <action name="Action012" class="test002.Validation02Action">
             <result name="success">/JSP/validationResult02.jsp</result>
             <result name="input">/JSP/validationError.jsp</result>
+        </action>
+
+
+        <action name="Action013" class="test002.UploadFileAction">
+            <!--配置文件上传的拦截器，对上传的文件进行格式校验-->
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/jpeg,image/gif</param>
+                <!--<param name="maximumSize">1024*1024</param>-->
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <param name="name">1.jpg</param>   <!--这个param元素相当于给name这个action属性赋默认值，当文件名为空的时候就会给这个值-->
+            <result name="success">/JSP/uploadResult.jsp</result>
+            <result name="input">/JSP/validationError.jsp</result>   <!--这里要配置全局国际化资源文件，才能输出中文，否则输出提示英文的-->
+        </action>
+
+        <action name="Action014" class="test002.DownloadFileAction">
+            <result type="stream" name="success">    <!--注意此处result标签的type属性-->
+                <param name="contentType">image/jpeg</param>
+                <param name="contentDisposition">attachment;filename="1.jpg"</param>
+                <param name="bufferSize">4096</param>
+            </result>
         </action>
 
     </package>
